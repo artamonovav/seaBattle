@@ -87,6 +87,7 @@ const fire = (event) => {
                 if(game.shipCount < 1) {
                     header.textContent = 'Игра Окончена!';
                     header.style.color = '#ff0000'
+                    enemy.removeEventListener('click', fire);
 
                     if(play.shot < play.record || play.record === 0) {
                         localStorage.setItem('seaBattleRecord', play.shot);
